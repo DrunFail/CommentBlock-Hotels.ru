@@ -1,0 +1,32 @@
+@mixin button{
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
+@mixin primary-button {
+    @include button;
+    background-color: dimgrey;
+    color: white;
+
+    &:hover {
+        color: dimgrey;
+        background-color: white;
+    }
+}
+
+@mixin secondary-button {
+    @include button;
+    background-color: white;
+    color: dimgrey;
+
+    &:hover {
+        color: white;
+        background-color: dimgrey;
+    }
+}
+

@@ -1,0 +1,11 @@
+@import 'button';
+
+.add-comm {
+    display: grid;
+    justify-content: flex-end;
+    padding-block-end: 3rem;
+
+    .add-comm-btn {
+        @include primary-button;
+    }
+}

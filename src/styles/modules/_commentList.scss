@@ -1,0 +1,129 @@
+.comment-list {
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 1rem;
+    max-inline-size: 50rem;
+    margin-inline: auto;
+
+    & h2 {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        justify-self: center;
+    }
+
+    & article {
+        min-block-size: 5rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        padding: 1rem 1rem 0.5rem;
+        display: grid;
+        grid-template-columns: max-content 1fr max-content;
+        column-gap: 1rem;
+        grid-template-areas: 'img body rem';
+
+        button {
+            background-color: transparent;
+            border: none;
+            opacity: 0.5;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+
+        .comment-body{
+            grid-area: body;
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-rows: max-content 1fr max-content;
+            
+
+            .name-date-container{
+                display: flex;
+                align-items: center;
+                column-gap: .5rem;
+
+                .name{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                .date{
+                    font-size: .9rem;
+                    font-weight: 400;
+                }
+            }
+
+            .title{
+                padding-block: 1rem 1rem;
+            }
+        }
+
+
+
+        .info {
+            grid-area: img;
+            display: grid;
+            justify-items: center;
+            
+
+            .profile-img {
+                height: 4rem;
+                width: 4rem;
+                background-color: dimgrey;
+                border-radius: 50%;
+            }
+        }
+
+
+        .remove {
+            grid-area: rem;
+            align-self: flex-start;
+            justify-self: flex-end;
+
+
+            svg {
+                height: 1.5rem;
+                width: 1.5rem;
+                display: block;
+            }
+        }
+
+        .like {
+            
+            align-self: flex-end;
+            display: flex;
+            column-gap: 0.5rem;
+
+
+
+            label {
+                opacity: 0.3;
+                cursor: pointer;
+
+                &:last-child {
+                    transform: rotate(180deg);
+                }
+
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    fill: blue;
+
+                    &:hover {
+                        fill: grey;
+                    }
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+            input:checked + label {
+                opacity: 1;
+            }
+        }
+    }
+}
