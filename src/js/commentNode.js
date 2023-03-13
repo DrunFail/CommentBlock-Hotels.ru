@@ -46,25 +46,23 @@ export function commentNode(comment) {
     remSvg.appendChild(remUse);
 
 
-    const timeToday = '16:23';
-    const timeTommorow = '18:39';
-    let commentDate = new Date(comment.date);
-    let [monthComm, dayComm, yearComm] = [
-        commentDate.getMonth() + 1,
-        commentDate.getDate() + 1,
-        commentDate.getFullYear(),
-    ];
-    
+    let commentDate = new Date(comment.date).toLocaleDateString();
+    let commentTime = new Date(comment.date).toLocaleTimeString().slice(0, -3);
 
 
 
     const dateData = () => {
-        if (comment.date === currentDate) {
-            return `сегодня, ${timeToday}`;
-        } else if (yearComm == year && monthComm == month && dayComm == day) {
-            return `вчера, ${timeTommorow} `
+        let dateNow = new Date();
+        let yesterday = new Date();
+        yesterday = new Date(yesterday.setDate(yesterday.getDate() - 1));
+        
+
+        if (commentDate === dateNow.toLocaleDateString()) {
+            return `сегодня, ${commentTime}`;
+        } else if (commentDate === yesterday.toLocaleDateString()) {
+            return `вчера, ${commentTime}`
         } else {
-            return comment.date
+            return `${commentDate}, ${commentTime}`
         }
     }
 
