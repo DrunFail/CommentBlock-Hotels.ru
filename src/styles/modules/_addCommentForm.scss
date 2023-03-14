@@ -1,9 +1,5 @@
 @import 'button';
 
-
-.form-container {
-    display: none;
-
     .comment-form {
         display: grid;
         max-inline-size: 40rem;
@@ -15,9 +11,7 @@
         border-radius: 1rem;
         row-gap: 2rem;
         background-color: white;
-        position: relative;
-        inset-block-start: 5rem;
-        z-index: 1;
+        
 
 
         & div {
@@ -37,6 +31,17 @@
             & input, textarea {
                 padding: .5rem;
                 font-size: 1.25rem;
+            }
+
+            .alert{
+                display: none;
+            }
+            .invalid{
+                display: block;
+                justify-self: flex-start;
+                background-color: blue;
+                color: white;
+                padding: 0.25rem 0.5rem;
             }
         }
 
@@ -62,15 +67,5 @@
             }
         }
     }
-}
 
-.open{
-    display: block;
-    position: absolute;
-    inset-block-start:0;
-    inset-inline-start: 0;
-    block-size: 100%;
-    inline-size: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    
-}
+

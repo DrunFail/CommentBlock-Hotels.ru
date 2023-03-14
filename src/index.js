@@ -1,7 +1,6 @@
-import CommentList  from './js/commentList';
-import { formControl } from './js/formControl';
+import './js/comments';
 import './styles/index.scss';
 
 
-CommentList();
-formControl();
+//CommentList();
+//formControl();
