@@ -1,71 +1,67 @@
 @import 'button';
 
-    .comment-form {
+.comment-form {
+    display: grid;
+    margin-inline: auto;
+    margin-block-end: 2rem;
+    padding-block: 1rem 1rem;
+    row-gap: 1rem;
+
+
+     div {
         display: grid;
-        max-inline-size: 40rem;
-        margin-inline: auto;
-        margin-block: 1rem;
-        padding-block: 1rem 5rem;
-        padding-inline: 5rem;
-        border: 1px solid black;
-        border-radius: 1rem;
-        row-gap: 2rem;
-        background-color: white;
-        
+        row-gap: 0.5rem;
 
 
-        & div {
-            display: grid;
-            row-gap: 0.5rem;
-
-
-            & label {
-                align-self: center;
-            }
-
-            & textarea {
-                resize: none;
-                block-size: 5rem;
-            }
-
-            & input, textarea {
-                padding: .5rem;
-                font-size: 1.25rem;
-            }
-
-            .alert{
-                display: none;
-            }
-            .invalid{
-                display: block;
-                justify-self: flex-start;
-                background-color: blue;
-                color: white;
-                padding: 0.25rem 0.5rem;
-            }
+         label {
+            align-self: center;
         }
 
-        & > h3 {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
+         textarea {
+            resize: none;
+            block-size: 5rem;
         }
 
-        .btn-container {
-            display: grid;
-            grid-auto-flow: column;
-            column-gap: 1rem;
+         input, textarea {
+            padding: .5rem;
+            font-size: 1.25rem;
+            background-color: var(--clr-black);
+            color: var(--clr-white);
+        }
 
-            & button {
+         input::-webkit-calendar-picker-indicator{
+            background-color: dimgrey;
+        }
 
-                @include secondary-button;
-                text-transform: uppercase;
-            }
+        .alert {
+            display: none;
+        }
 
-            & button:last-child {
-                @include primary-button;
+        .invalid {
+            display: block;
+            justify-self: flex-start;
+            background-color: var(--clr-blue);
+            color: var(--clr-black);
+            padding: 0.25rem 0.5rem;
+        }
+    }
+
+
+
+    .btn-container {
+
+        & button {
+            @include primary-button;
+            background-color: var(--clr-blue);
+            color: black;
+
+            &:hover{
+                background-color:var(--clr-blue);
+                color: black;
+                
             }
         }
     }
+}
 
 
