@@ -33,48 +33,49 @@
         }
 
 
-        .comment-body{
+        .comment-body {
             grid-area: body;
             display: grid;
             grid-auto-flow: row;
             grid-template-rows: max-content 1fr max-content;
-            
 
-            .name-date-container{
+
+            .name-date-container {
                 display: flex;
                 align-items: center;
                 column-gap: .5rem;
 
-                .name{
+                .name {
                     font-size: 1rem;
                     font-weight: 500;
                 }
-                .date{
+
+                .date {
                     font-size: .9rem;
                     font-weight: 400;
                 }
             }
 
-            .title{
+            .title {
                 padding-block: 1rem 1rem;
             }
         }
 
 
 
-        .info {
-            grid-area: img;
-            display: grid;
-            justify-items: center;
-            
+        
 
-            .profile-img {
+
+            
+        
+        .profile-img {
+                grid-area: img;
                 height: 4rem;
                 width: 4rem;
                 background-color: dimgrey;
                 border-radius: 50%;
             }
-        }
+        
 
 
         .remove {
@@ -91,7 +92,6 @@
         }
 
         .like {
-            
             align-self: flex-end;
             display: flex;
             column-gap: 0.5rem;

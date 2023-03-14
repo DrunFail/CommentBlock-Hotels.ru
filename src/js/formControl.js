@@ -1,5 +1,5 @@
 import { commentDiv } from './commentList';
-import { commentNode } from './commentNode';
+import commentNode  from './commentNode';
 
 
 export default function formControl() {

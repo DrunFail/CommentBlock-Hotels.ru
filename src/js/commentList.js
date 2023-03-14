@@ -1,5 +1,5 @@
 import { COMMENT_DATA } from './constants';
-import { commentNode } from './commentNode';
+import commentNode  from './commentNode';
 
 export const commentDiv = document.querySelector('.comment-list');//comments container
 
