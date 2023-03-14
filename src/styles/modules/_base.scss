@@ -1,5 +1,11 @@
-main {
-   max-inline-size: 50rem;
-   margin-inline: auto;
-   padding-block: 2rem;
+body {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+
+    main {
+        max-inline-size: 50rem;
+        margin-inline: auto;
+        padding-block: 2rem;
+        padding-inline: 0.5rem;
+    }
 }
