@@ -1,8 +1,10 @@
-import { commentDiv } from './commentList';
 import commentNode  from './commentNode';
 
 
 export default function formControl() {
+    //coment container
+    const commentDiv = document.querySelector('.comment-list');
+
     //get form
     const form = document.querySelector('.comment-form');
 
