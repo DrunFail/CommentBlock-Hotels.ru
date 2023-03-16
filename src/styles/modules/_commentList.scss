@@ -61,6 +61,9 @@
                 display: flex;
                 column-gap: 0.5rem;
 
+
+
+
                 label {
                     cursor: pointer;
 
@@ -102,12 +105,21 @@
         button {
             background-color: transparent;
             border: none;
-            opacity: 0.5;
             cursor: pointer;
 
             &:hover {
-                opacity: 1;
+
             }
+
+            svg {
+                height: 1.5rem;
+                width: 1.5rem;
+                fill: grey;
+            }
+        }
+
+        .liked svg {
+            fill: red;
         }
     }
 }
