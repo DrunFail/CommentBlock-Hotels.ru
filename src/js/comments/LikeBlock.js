@@ -33,44 +33,60 @@ export default function LikeBlock(comment) {
     likeContainer.classList.add('like');
 
     // svg sprite
-    let likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    let likeUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    likeUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${Sprite}#like`);
-    likeSvg.appendChild(likeUse);
+    //let likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    //let likeUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    //likeUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${Sprite}#like`);
+    //likeSvg.appendChild(likeUse);
 
     
-    let dislikeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    let dislikeUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    dislikeUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${Sprite}#like`);
-    dislikeSvg.appendChild(dislikeUse);
+    //let dislikeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    //let dislikeUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    //dislikeUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${Sprite}#like`);
+    //dislikeSvg.appendChild(dislikeUse);
 
-    //radio inputs
-    let inputLike = document.createElement('input');
-    inputLike.setAttribute('name', `like${comment.id}`);
-    inputLike.setAttribute('type', 'radio');
-    inputLike.setAttribute('id', `l${comment.id}`);
-
+    let heartSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    let heartUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    heartUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${Sprite}#heart`);
+    heartSvg.appendChild(heartUse);
 
 
-    let inputDislike = document.createElement('input');
-    inputDislike.setAttribute('name', `like${comment.id}`);
-    inputDislike.setAttribute('type', 'radio');
-    inputDislike.setAttribute('id', `d${comment.id}`);
+    ////radio inputs
+    //let inputLike = document.createElement('input');
+    //inputLike.setAttribute('name', `like${comment.id}`);
+    //inputLike.setAttribute('type', 'radio');
+    //inputLike.setAttribute('id', `l${comment.id}`);
 
 
-    //label for input
-    let likeLabel = document.createElement('label');
-    likeLabel.setAttribute('for', `l${comment.id}`);
-    likeLabel.append(likeSvg);
 
-    let dislikeLabel = document.createElement('label');
-    dislikeLabel.setAttribute('for', `d${comment.id}`);
-    dislikeLabel.append(dislikeSvg);
-    
-    
-    handlerLike(inputDislike, inputLike);
+    //let inputDislike = document.createElement('input');
+    //inputDislike.setAttribute('name', `like${comment.id}`);
+    //inputDislike.setAttribute('type', 'radio');
+    //inputDislike.setAttribute('id', `d${comment.id}`);
 
-    likeContainer.append(inputLike, likeLabel, inputDislike, dislikeLabel);
+
+    ////label for input
+    //let likeLabel = document.createElement('label');
+    //likeLabel.setAttribute('for', `l${comment.id}`);
+    //likeLabel.append(likeSvg);
+
+    //let dislikeLabel = document.createElement('label');
+    //dislikeLabel.setAttribute('for', `d${comment.id}`);
+    //dislikeLabel.append(dislikeSvg);
+
+
+    //handlerLike(inputDislike, inputLike);
+
+    //likeContainer.append(inputLike, likeLabel, inputDislike, dislikeLabel);
+
+    const likeBtn = document.createElement('button');
+    likeBtn.append(heartSvg);
+
+
+    likeBtn.addEventListener('click', () => likeBtn.classList.toggle('liked'));
+
+    likeContainer.append(likeBtn);
+
+
 
     return likeContainer;
 
